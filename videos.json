@@ -1,6 +1,15 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "videos": [
+    {
+      "slug": "2026-10-15-you-waited-for-phones-to-get-cheaper-they-are-about-to-cost",
+      "date": "2026-10-15",
+      "title": "You waited for phones to get cheaper. They are about to cost more.",
+      "thumbnail": "thumbs/2026-10-15-you-waited-for-phones-to-get-cheaper-they-are-about-to-cost.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/sAW3XM66qt8"
+      }
+    },
     {
       "slug": "2026-10-15-you-bought-apple-s-new-299-screen-you-can-t-even-set-it-up",
       "date": "2026-10-15",
