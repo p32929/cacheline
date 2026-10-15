@@ -117,7 +117,7 @@
     avatar: "https://res.cloudinary.com/p32929/image/upload/v1787429204/ChatGPT_Image_Aug_23_2026_12_06_28_AM_a23tr7.png",
     tagline: "Tech stories. We read the small print, so you don't have to.",
     coffee: "https://sh0sh0.netlify.app/p32929_buymeacoffee",
-    source: "https://github.com/p32929/link_in_bio",
+    source: "https://github.com/p32929/cacheline",
     accounts: [
       { id: "youtube",   group: "video", name: "YouTube",   handle: "@CacheLine2026",      url: "https://www.youtube.com/@CacheLine2026", icon: "youtube",  color: "#FF0000" },
       { id: "tiktok",    group: "video", name: "TikTok",    handle: "@cacheline2026",      url: "https://www.tiktok.com/@cacheline2026",   icon: "tiktok" },
@@ -156,7 +156,7 @@
   }
 
   const order = ["youtube", "tiktok", "instagram", "facebook", "x", "threads", "pinterest", "tumblr", "linkedin", "medium", "devto"];
-  const chips = links => order.filter(k => links[k]).map(k => `
+  const chips = links => order.filter(k => links[k] && byId[k]).map(k => `
       <a href="${esc(links[k])}" target="_blank" rel="noopener" title="Watch on ${esc(byId[k].name)}" aria-label="Watch on ${esc(byId[k].name)}"
          class="press grid h-11 w-11 place-items-center rounded-xl border-[3px] border-ink bg-paper shadow-[3px_3px_0_#15130F]">${iconHtml(byId[k])}</a>`).join("");
   const niceDate = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
