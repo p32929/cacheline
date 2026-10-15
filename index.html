@@ -5,111 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Cache Line: tech stories, small print included</title>
   <meta name="description" content="Short, funny stories about the tech small print. We read it so you don't have to." />
-  <meta name="theme-color" content="#F1E8D6" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f4f5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#09090b" />
   <meta property="og:title" content="Cache Line" />
   <meta property="og:description" content="Tech stories. We read the small print, so you don't have to." />
   <meta property="og:image" content="https://res.cloudinary.com/p32929/image/upload/v1787429204/ChatGPT_Image_Aug_23_2026_12_06_28_AM_a23tr7.png" />
 
   <!-- Design read: link-in-bio for people arriving from a Short on their phone (mostly non-tech viewers),
-       in the Cacheline poster language used in the videos: flat cream field, Anton caps, highlight boxes,
-       ink cards with hard shadows, paper grain. Dials ~ variance 6 / motion 4 / density 4. -->
+       with a clean social-profile language: the video thumbnails are the visuals, the page stays quiet around them.
+       Dials: variance 6 / motion 4 / density 4. Palette: zinc neutrals + one accent (Cacheline yellow), auto light/dark.
+       Shapes: tiles and panels 16-24px radius, every button a full pill. -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { ink: "#15130F", cream: "#F1E8D6", paper: "#FFF4E2", red: "#E0392B", green: "#0C8A54", yellow: "#FFD83A" },
-          fontFamily: { display: ["Anton", "Impact", "sans-serif"], body: ["Geist", "system-ui", "sans-serif"], hand: ["Permanent Marker", "cursive"] },
-          boxShadow: { hard: "6px 6px 0 #15130F", hardsm: "4px 4px 0 #15130F" },
+          colors: { accent: "#FFD23F" },
+          fontFamily: { display: ["Anton", "Impact", "sans-serif"], sans: ["Geist", "system-ui", "sans-serif"] },
         },
       },
     };
   </script>
   <style>
-    body { font-family: Geist, system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
-    .grain { position: fixed; inset: 0; pointer-events: none; opacity: .22; mix-blend-mode: multiply; z-index: 0;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
-    .dots { background-image: radial-gradient(rgba(21,19,15,.10) 3px, transparent 3.5px); background-size: 22px 22px; }
-    .press { transition: transform .12s ease, box-shadow .12s ease; }
-    .press:active { transform: translate(4px, 4px); box-shadow: 0 0 0 #15130F; }
-    @media (hover: hover) { .press:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #15130F; } }
-    .rise { animation: rise .5s cubic-bezier(.2,.8,.2,1) both; }
-    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-    @media (prefers-reduced-motion: reduce) { .rise { animation: none; } .press { transition: none; } }
-    .icon { width: 22px; height: 22px; flex: none; }
+    body { -webkit-tap-highlight-color: transparent; }
+    .reveal { animation: reveal .55s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--i, 0) * 60ms); }
+    @keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .tap { transition: transform .15s ease, background-color .15s ease; }
+    .tap:active { transform: scale(.98); }
+    dialog[open] { animation: sheet .3s cubic-bezier(.16,1,.3,1); }
+    dialog::backdrop { background: rgb(9 9 11 / .55); }
+    @keyframes sheet { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .shimmer { background: linear-gradient(90deg, rgb(161 161 170 / .18), rgb(161 161 170 / .32), rgb(161 161 170 / .18)); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+    @media (prefers-reduced-motion: reduce) { .reveal, dialog[open], .shimmer { animation: none; } .tap { transition: none; } }
   </style>
 </head>
-<body class="min-h-[100dvh] bg-cream text-ink">
-  <div class="grain"></div>
-  <div class="dots fixed inset-x-0 top-0 h-56 [mask-image:linear-gradient(#000,transparent)] pointer-events-none"></div>
+<body class="min-h-[100dvh] bg-zinc-100 font-sans text-zinc-950 antialiased dark:bg-zinc-950 dark:text-zinc-50">
+  <!-- Phones: one column (profile, follow, newest, all stories, get-first, footer).
+       Wide screens (xl+): left column = who we are + where to follow (sticky), right column = the stories. -->
+  <main class="mx-auto w-full max-w-[1360px] px-4 pb-16 pt-8 sm:px-6 lg:px-10 lg:pt-12">
+    <div class="flex flex-col gap-10 xl:grid xl:grid-cols-[380px_minmax(0,1fr)] xl:items-start xl:gap-16">
 
-  <!-- Phones: one column in reading order (header, newest, accounts, all stories, footer).
-       Wide screens (xl+): left column = who we are + where to find us (sticky), right column = the videos. -->
-  <main class="relative z-10 mx-auto w-full max-w-[1280px] px-5 pb-16 pt-10 sm:px-8 lg:px-10 xl:pt-14">
-    <div class="flex flex-col xl:grid xl:grid-cols-[400px_minmax(0,1fr)] xl:items-start xl:gap-14 2xl:grid-cols-[440px_minmax(0,1fr)] 2xl:gap-16">
-
-      <aside class="contents xl:block">
-        <!-- Header -->
-        <header class="rise order-1 text-center xl:text-left">
-          <div class="relative mx-auto h-24 w-24 xl:mx-0 xl:h-28 xl:w-28">
-            <img id="avatar" alt="Cache Line logo" class="h-full w-full rounded-full border-[5px] border-ink bg-paper object-cover shadow-hard" />
-            <span class="absolute -bottom-1 -right-2 rotate-6 rounded-md border-[3px] border-ink bg-yellow px-1.5 py-0.5 font-display text-xs uppercase shadow-hardsm">new stories</span>
+      <aside class="contents xl:sticky xl:top-10 xl:flex xl:flex-col xl:gap-10">
+        <header class="reveal order-1">
+          <div class="flex items-center gap-4">
+            <img id="avatar" alt="Cache Line logo" class="h-20 w-20 flex-none rounded-full bg-zinc-900 object-cover ring-4 ring-white dark:ring-zinc-800 xl:h-24 xl:w-24" />
+            <div class="min-w-0">
+              <h1 class="font-display text-[44px] uppercase leading-none tracking-wide lg:text-5xl">Cache <span class="inline-block bg-[linear-gradient(transparent_58%,#FFD23F_58%,#FFD23F_92%,transparent_92%)] px-0.5 leading-[0.9] dark:bg-[linear-gradient(transparent_58%,rgb(255_210_63_/_.7)_58%,rgb(255_210_63_/_.7)_92%,transparent_92%)]">Line</span></h1>
+              <p id="tagline" class="mt-2 max-w-[32ch] text-[15px] leading-snug text-zinc-600 dark:text-zinc-400"></p>
+            </div>
           </div>
-          <h1 class="mt-6 font-display text-[64px] uppercase leading-[0.9] tracking-wide sm:text-[84px]">
-            Cache <span class="inline-block -rotate-2 bg-yellow px-2 shadow-hardsm">Line</span>
-          </h1>
-          <p id="tagline" class="mx-auto mt-5 max-w-[360px] text-[17px] font-medium leading-snug sm:text-lg xl:mx-0"></p>
-          <p class="mt-2 -rotate-1 font-hand text-[15px] text-red">funny stories, real facts</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <button id="watchNewest" type="button" class="tap inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-[15px] font-semibold text-zinc-950 hover:bg-[#ffdb66] disabled:opacity-50" disabled>
+              <i class="ph-fill ph-play text-base" aria-hidden="true"></i> Watch the newest
+            </button>
+            <a id="subscribe" target="_blank" rel="noopener" class="tap inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-5 py-3 text-[15px] font-semibold hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800">
+              <i class="ph-fill ph-youtube-logo text-lg text-[#FF0000]" aria-hidden="true"></i> Subscribe
+            </a>
+          </div>
         </header>
 
-        <!-- Find us -->
-        <section class="rise order-3 mt-10 [animation-delay:.16s]" aria-labelledby="find-h">
-          <h2 id="find-h" class="mb-1 font-display text-2xl uppercase tracking-wide">Watch us where you scroll</h2>
-          <p class="mb-4 text-[15px] text-ink/70">Same stories, every app. Pick yours.</p>
-          <div id="video" class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-2"></div>
-          <h3 class="mb-3 mt-8 font-display text-xl uppercase tracking-wide">Read the long version</h3>
-          <div id="read" class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-2"></div>
-          <h3 class="mb-3 mt-8 font-display text-xl uppercase tracking-wide">Get the next one first</h3>
-          <div id="chat" class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-2"></div>
+        <section class="reveal order-2 [--i:1]" aria-labelledby="follow-h">
+          <h2 id="follow-h" class="text-lg font-semibold tracking-tight">Follow on your app</h2>
+          <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Same stories everywhere. Pick the one you use.</p>
+          <div id="follow" class="mt-4 grid grid-cols-4 gap-1 sm:grid-cols-6 xl:grid-cols-4"></div>
         </section>
 
-        <!-- Footer -->
-        <footer class="order-5 mt-14 space-y-3 xl:mt-10">
-          <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
-            <a id="coffee" target="_blank" rel="noopener" class="press flex items-center justify-center gap-3 rounded-2xl border-[3px] border-ink bg-yellow px-4 py-4 font-display text-xl uppercase tracking-wide shadow-hard">
-              <img class="icon" alt="" src="https://cdn.simpleicons.org/buymeacoffee/15130F" /> Buy me a coffee
+        <section class="reveal order-5 [--i:2]" aria-labelledby="first-h">
+          <h2 id="first-h" class="text-lg font-semibold tracking-tight">Get new stories first</h2>
+          <div id="first" class="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-1"></div>
+        </section>
+
+        <footer class="order-6 border-t border-zinc-200 pt-6 dark:border-zinc-800">
+          <div class="flex flex-wrap gap-2">
+            <a id="coffee" target="_blank" rel="noopener" class="tap inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800">
+              <i class="ph-bold ph-coffee text-base" aria-hidden="true"></i> Buy me a coffee
             </a>
-            <a id="source" target="_blank" rel="noopener" class="press flex items-center justify-center gap-3 rounded-2xl border-[3px] border-ink bg-paper px-4 py-3 text-[15px] font-semibold shadow-hardsm">
-              <img class="icon" alt="" src="https://cdn.simpleicons.org/github/15130F" /> Source code of this page
+            <a id="source" target="_blank" rel="noopener" class="tap inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-zinc-600 hover:bg-zinc-200/70 dark:text-zinc-400 dark:hover:bg-zinc-900">
+              <i class="ph-bold ph-github-logo text-base" aria-hidden="true"></i> Source code
             </a>
           </div>
-          <p class="pt-4 text-center text-xs text-ink/60 xl:text-left">Stories are dramatized. Facts come from the sources in each video's description.</p>
+          <p class="mt-4 text-xs leading-relaxed text-zinc-500">Stories are dramatized. Facts come from the sources in each video's description.</p>
         </footer>
       </aside>
 
-      <div class="contents xl:block">
-        <!-- Latest video -->
-        <section id="latest" class="rise order-2 mt-10 xl:mt-0 [animation-delay:.08s]" aria-labelledby="latest-h">
-          <h2 id="latest-h" class="mb-3 font-display text-2xl uppercase tracking-wide md:text-3xl">The newest story</h2>
-          <div id="latestCard"></div>
+      <div class="contents xl:flex xl:flex-col xl:gap-12">
+        <section class="reveal order-3 [--i:1]" aria-labelledby="newest-h">
+          <h2 id="newest-h" class="sr-only">Newest story</h2>
+          <div id="newest"></div>
         </section>
 
-        <!-- All videos -->
-        <section class="rise order-4 mt-12 [animation-delay:.24s]" aria-labelledby="all-h">
-          <div class="mb-3 flex items-end justify-between">
-            <h2 id="all-h" class="font-display text-2xl uppercase tracking-wide md:text-3xl">Every story so far</h2>
-            <span id="count" class="font-hand text-sm text-red"></span>
+        <section class="reveal order-4 [--i:2]" aria-labelledby="all-h">
+          <div class="flex items-baseline gap-3">
+            <h2 id="all-h" class="text-lg font-semibold tracking-tight lg:text-xl">All stories</h2>
+            <span id="count" class="text-sm text-zinc-500"></span>
           </div>
-          <div id="all" class="grid gap-4 sm:grid-cols-2 2xl:grid-cols-3"></div>
+          <div id="all" class="mt-4 grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4"></div>
         </section>
       </div>
 
     </div>
   </main>
+
+  <!-- One story's links. Bottom sheet on phones, centered panel on bigger screens. -->
+  <dialog id="sheet" aria-labelledby="sheetTitle"
+    class="m-0 mt-auto max-h-[88dvh] w-full max-w-none overflow-y-auto rounded-t-3xl bg-white p-0 text-zinc-950 shadow-2xl dark:bg-zinc-900 dark:text-zinc-50 sm:m-auto sm:max-w-md sm:rounded-3xl">
+    <div class="p-5 sm:p-6">
+      <div class="mx-auto mb-4 h-1.5 w-10 rounded-full bg-zinc-300 dark:bg-zinc-700 sm:hidden" aria-hidden="true"></div>
+      <div class="flex items-start gap-4">
+        <img id="sheetThumb" alt="" class="aspect-[9/16] w-16 flex-none rounded-xl object-cover object-top" />
+        <div class="min-w-0 flex-1">
+          <p id="sheetDate" class="text-xs font-medium text-zinc-500"></p>
+          <h3 id="sheetTitle" class="mt-1 text-[17px] font-semibold leading-snug"></h3>
+        </div>
+        <button id="sheetClose" type="button" aria-label="Close" class="tap -mr-1 -mt-1 grid h-10 w-10 flex-none place-items-center rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          <i class="ph-bold ph-x text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="mt-5 text-sm font-medium text-zinc-600 dark:text-zinc-400">Watch it on</p>
+      <div id="sheetLinks" class="mt-2 grid gap-1.5"></div>
+      <button id="sheetCopy" type="button" class="tap mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-zinc-300 px-4 py-3 text-sm font-semibold hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800">
+        <i class="ph-bold ph-link text-base" aria-hidden="true"></i> <span>Copy link to this story</span>
+      </button>
+    </div>
+  </dialog>
 
 <script>
   // Everything you edit by hand lives here. The video list comes from videos.json (same folder).
@@ -118,86 +142,155 @@
     tagline: "Tech stories. We read the small print, so you don't have to.",
     coffee: "https://sh0sh0.netlify.app/p32929_buymeacoffee",
     source: "https://github.com/p32929/cacheline",
+    // group "follow" = the app grid, "first" = channels that send new stories. color = the circle behind the icon.
     accounts: [
-      { id: "youtube",   group: "video", name: "YouTube",   handle: "@CacheLine2026",      url: "https://www.youtube.com/@CacheLine2026", icon: "youtube",  color: "#FF0000" },
-      { id: "tiktok",    group: "video", name: "TikTok",    handle: "@cacheline2026",      url: "https://www.tiktok.com/@cacheline2026",   icon: "tiktok" },
-      { id: "instagram", group: "video", name: "Instagram", handle: "@cacheline2026",      url: "https://www.instagram.com/cacheline2026/", icon: "instagram" },
-      { id: "facebook",  group: "video", name: "Facebook",  handle: "Cacheline",           url: "https://www.facebook.com/cacheline2026",  icon: "facebook" },
-      { id: "x",         group: "video", name: "X",         handle: "@cacheline2026",      url: "https://x.com/cacheline2026",             icon: "x" },
-      { id: "threads",   group: "video", name: "Threads",   handle: "@cacheline2026",      url: "https://www.threads.com/@cacheline2026",  icon: "threads" },
-      { id: "pinterest", group: "video", name: "Pinterest", handle: "cachelinecacheline",  url: "https://www.pinterest.com/cachelinecacheline/", icon: "pinterest" },
-      { id: "tumblr",    group: "video", name: "Tumblr",    handle: "cacheline",           url: "https://www.tumblr.com/cacheline",        icon: "tumblr" },
-      { id: "linkedin",  group: "read",  name: "LinkedIn",  handle: "CacheLine",           url: "https://www.linkedin.com/in/cacheline-undefined-25569843a/", ph: "ph-linkedin-logo" },
-      { id: "medium",    group: "read",  name: "Medium",    handle: "@cachelinecacheline", url: "https://medium.com/@cachelinecacheline",  icon: "medium" },
-      { id: "devto",     group: "read",  name: "Dev.to",    handle: "cacheline",           url: "https://dev.to/cacheline",                icon: "devdotto" },
-      { id: "whatsapp",  group: "chat",  name: "WhatsApp",  handle: "Channel",             url: "https://whatsapp.com/channel/0029Vb9P4CWCxoB2fyj6Vg1Y", icon: "whatsapp" },
-      { id: "telegram",  group: "chat",  name: "Telegram",  handle: "Group",               url: "https://t.me/+OcGB_xjXX_phZmM9",          icon: "telegram" },
+      { id: "youtube",   group: "follow", name: "YouTube",   handle: "@CacheLine2026",      url: "https://www.youtube.com/@CacheLine2026", icon: "youtube",   color: "#FF0000" },
+      { id: "tiktok",    group: "follow", name: "TikTok",    handle: "@cacheline2026",      url: "https://www.tiktok.com/@cacheline2026",   icon: "tiktok",    color: "#000000" },
+      { id: "instagram", group: "follow", name: "Instagram", handle: "@cacheline2026",      url: "https://www.instagram.com/cacheline2026/", icon: "instagram", color: "#E4405F" },
+      { id: "facebook",  group: "follow", name: "Facebook",  handle: "cacheline2026",       url: "https://www.facebook.com/cacheline2026",  icon: "facebook",  color: "#0866FF" },
+      { id: "x",         group: "follow", name: "X",         handle: "@cacheline2026",      url: "https://x.com/cacheline2026",             icon: "x",         color: "#000000" },
+      { id: "threads",   group: "follow", name: "Threads",   handle: "@cacheline2026",      url: "https://www.threads.com/@cacheline2026",  icon: "threads",   color: "#000000" },
+      { id: "pinterest", group: "follow", name: "Pinterest", handle: "cachelinecacheline",  url: "https://www.pinterest.com/cachelinecacheline/", icon: "pinterest", color: "#BD081C" },
+      { id: "tumblr",    group: "follow", name: "Tumblr",    handle: "cacheline",           url: "https://www.tumblr.com/cacheline",        icon: "tumblr",    color: "#36465D" },
+      { id: "linkedin",  group: "follow", name: "LinkedIn",  handle: "CacheLine",           url: "https://www.linkedin.com/in/cacheline-undefined-25569843a/", ph: "ph-linkedin-logo", color: "#0A66C2" },
+      { id: "medium",    group: "follow", name: "Medium",    handle: "@cachelinecacheline", url: "https://medium.com/@cachelinecacheline",  icon: "medium",    color: "#000000" },
+      { id: "devto",     group: "follow", name: "Dev.to",    handle: "cacheline",           url: "https://dev.to/cacheline",                icon: "devdotto",  color: "#000000" },
+      { id: "whatsapp",  group: "first",  name: "WhatsApp",  handle: "Join the channel",    url: "https://whatsapp.com/channel/0029Vb9P4CWCxoB2fyj6Vg1Y", icon: "whatsapp", color: "#25D366" },
+      { id: "telegram",  group: "first",  name: "Telegram",  handle: "Join the group",      url: "https://t.me/+OcGB_xjXX_phZmM9",          icon: "telegram",  color: "#26A5E4" },
     ],
   };
 
+  const $ = id => document.getElementById(id);
   const byId = Object.fromEntries(PROFILE.accounts.map(a => [a.id, a]));
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const iconHtml = (a, size = "icon") => a.ph
-    ? `<i class="ph-bold ${a.ph} text-[22px] leading-none" aria-hidden="true"></i>`
-    : `<img class="${size}" alt="" src="https://cdn.simpleicons.org/${a.icon}/15130F" loading="lazy" />`;
+  const niceDate = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  // Brand mark in a brand-coloured circle (white glyph), so it reads the same in light and dark mode.
+  const mark = (a, size = 44) => `
+    <span class="grid flex-none place-items-center rounded-full ring-1 ring-inset ring-white/10" style="width:${size}px;height:${size}px;background:${a.color}">
+      ${a.ph
+        ? `<i class="ph-fill ${a.ph} leading-none text-white" style="font-size:${Math.round(size * .5)}px" aria-hidden="true"></i>`
+        : `<img alt="" src="https://cdn.simpleicons.org/${a.icon}/ffffff" style="width:${Math.round(size * .46)}px;height:${Math.round(size * .46)}px" />`}
+    </span>`;
 
-  document.getElementById("avatar").src = PROFILE.avatar;
-  document.getElementById("tagline").textContent = PROFILE.tagline;
-  document.getElementById("coffee").href = PROFILE.coffee;
-  document.getElementById("source").href = PROFILE.source;
+  $("avatar").src = PROFILE.avatar;
+  $("tagline").textContent = PROFILE.tagline;
+  $("coffee").href = PROFILE.coffee;
+  $("source").href = PROFILE.source;
+  $("subscribe").href = byId.youtube.url;
 
-  for (const g of ["video", "read", "chat"]) {
-    document.getElementById(g).innerHTML = PROFILE.accounts.filter(a => a.group === g).map(a => `
-      <a href="${esc(a.url)}" target="_blank" rel="noopener" class="press flex min-h-[64px] items-center gap-3 rounded-2xl border-[3px] border-ink bg-paper px-3.5 py-3 shadow-hardsm">
-        ${iconHtml(a)}
-        <span class="min-w-0"><span class="block font-display text-lg uppercase leading-none tracking-wide">${esc(a.name)}</span>
-        <span class="mt-1 block truncate text-xs text-ink/60">${esc(a.handle)}</span></span>
-      </a>`).join("");
+  $("follow").innerHTML = PROFILE.accounts.filter(a => a.group === "follow").map(a => `
+    <a href="${esc(a.url)}" target="_blank" rel="noopener" title="${esc(a.name)}: ${esc(a.handle)}"
+       class="tap flex flex-col items-center gap-2 rounded-2xl px-1 py-3 hover:bg-white dark:hover:bg-zinc-900">
+      ${mark(a)}
+      <span class="w-full truncate text-center text-xs font-medium">${esc(a.name)}</span>
+    </a>`).join("");
+
+  $("first").innerHTML = PROFILE.accounts.filter(a => a.group === "first").map(a => `
+    <a href="${esc(a.url)}" target="_blank" rel="noopener"
+       class="tap flex items-center gap-3 rounded-2xl bg-white p-3 hover:bg-zinc-50 dark:bg-zinc-900 dark:hover:bg-zinc-800">
+      ${mark(a, 40)}
+      <span class="min-w-0 flex-1"><span class="block text-[15px] font-semibold">${esc(a.name)}</span>
+      <span class="block text-sm text-zinc-500">${esc(a.handle)}</span></span>
+      <i class="ph-bold ph-arrow-up-right text-zinc-400" aria-hidden="true"></i>
+    </a>`).join("");
+
+  // Platform rows for one story, in this order. YouTube is the main one, so it gets the accent.
+  const order = ["youtube", "tiktok", "instagram", "facebook", "x", "threads", "pinterest", "tumblr", "linkedin", "medium", "devto"];
+  const platforms = links => order.filter(k => links[k] && byId[k]);
+  const linkRows = links => platforms(links).map(k => `
+    <a href="${esc(links[k])}" target="_blank" rel="noopener"
+       class="tap flex items-center gap-3 rounded-2xl px-3 py-2.5 ${k === "youtube" ? "bg-accent text-zinc-950 hover:bg-[#ffdb66]" : "bg-zinc-100 hover:bg-zinc-200/80 dark:bg-zinc-800/70 dark:hover:bg-zinc-800"}">
+      ${mark(byId[k], 32)}
+      <span class="flex-1 text-[15px] font-semibold">${esc(byId[k].name)}</span>
+      <i class="ph-bold ph-arrow-up-right ${k === "youtube" ? "" : "text-zinc-400"}" aria-hidden="true"></i>
+    </a>`).join("");
+
+  let videos = [];
+  const sheet = $("sheet");
+  function openStory(slug) {
+    const v = videos.find(x => x.slug === slug);
+    if (!v) return;
+    $("sheetThumb").src = v.thumbnail;
+    $("sheetDate").textContent = niceDate(v.date);
+    $("sheetTitle").textContent = v.title;
+    $("sheetLinks").innerHTML = linkRows(v.links);
+    $("sheetCopy").dataset.slug = v.slug;
+    $("sheetCopy").querySelector("span").textContent = "Copy link to this story";
+    if (!sheet.open) sheet.showModal();
+  }
+  $("sheetClose").onclick = () => sheet.close();
+  sheet.addEventListener("click", e => { if (e.target === sheet) sheet.close(); }); // tap outside the panel
+  $("sheetCopy").onclick = async e => {
+    const url = `${location.origin}${location.pathname}?v=${encodeURIComponent(e.currentTarget.dataset.slug)}`;
+    const label = e.currentTarget.querySelector("span");
+    try { await navigator.clipboard.writeText(url); label.textContent = "Link copied"; }
+    catch { window.prompt("Copy this link:", url); }
+  };
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-story]");
+    if (t) openStory(t.dataset.story);
+  });
+
+  const skeleton = () => {
+    $("newest").innerHTML = `<div class="grid gap-5 rounded-3xl bg-white p-3 dark:bg-zinc-900 md:grid-cols-[minmax(0,260px)_1fr] md:p-4">
+      <div class="shimmer aspect-[9/16] rounded-2xl"></div>
+      <div class="space-y-3 py-2"><div class="shimmer h-3 w-24 rounded-full"></div><div class="shimmer h-7 w-4/5 rounded-full"></div><div class="shimmer h-7 w-3/5 rounded-full"></div></div></div>`;
+    $("all").innerHTML = Array.from({ length: 4 }, () => `<div><div class="shimmer aspect-[9/16] rounded-2xl"></div><div class="shimmer mt-3 h-3 w-4/5 rounded-full"></div></div>`).join("");
+  };
+
+  function render() {
+    $("count").textContent = videos.length === 1 ? "1 story" : `${videos.length} stories`;
+    if (!videos.length) {
+      $("newest").innerHTML = "";
+      $("all").innerHTML = `<p class="col-span-full rounded-2xl bg-white p-6 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">The first story is on its way. Follow on your app to see it first.</p>`;
+      return;
+    }
+    const n = videos[0];
+    $("watchNewest").disabled = false;
+    $("watchNewest").onclick = () => openStory(n.slug);
+    $("newest").innerHTML = `
+      <article class="grid gap-5 rounded-3xl bg-white p-3 dark:bg-zinc-900 md:grid-cols-[minmax(0,260px)_1fr] md:gap-8 md:p-4 xl:grid-cols-[minmax(0,300px)_1fr]">
+        <button type="button" data-story="${esc(n.slug)}" class="group relative block self-start overflow-hidden rounded-2xl" aria-label="Watch: ${esc(n.title)}">
+          <img src="${esc(n.thumbnail)}" alt="" class="aspect-[9/16] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+          <span class="absolute left-3 top-3 rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-zinc-950">New</span>
+          <span class="absolute bottom-3 right-3 grid h-12 w-12 place-items-center rounded-full bg-white/95 text-zinc-950 shadow-lg"><i class="ph-fill ph-play text-xl" aria-hidden="true"></i></span>
+        </button>
+        <div class="flex flex-col justify-center px-1 pb-2 md:px-0 md:py-4 md:pr-4">
+          <p class="text-sm font-medium text-zinc-500">${niceDate(n.date)}</p>
+          <h3 class="mt-2 max-w-[22ch] text-2xl font-semibold leading-tight tracking-tight md:text-3xl xl:text-4xl">${esc(n.title)}</h3>
+          <p class="mt-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">Watch it on</p>
+          <div class="mt-2 grid gap-1.5 sm:grid-cols-2 2xl:grid-cols-3">${linkRows(n.links)}</div>
+        </div>
+      </article>`;
+    $("all").innerHTML = videos.map((v, i) => `
+      <button type="button" data-story="${esc(v.slug)}" class="reveal group self-start text-left" style="--i:${i}">
+        <span class="block overflow-hidden rounded-2xl bg-zinc-200 dark:bg-zinc-800">
+          <img src="${esc(v.thumbnail)}" alt="" class="aspect-[9/16] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+        </span>
+        <span class="mt-3 line-clamp-2 block text-[15px] font-semibold leading-snug">${esc(v.title)}</span>
+        <span class="mt-1 block text-sm text-zinc-500">${niceDate(v.date)} · on ${platforms(v.links).length} apps</span>
+      </button>`).join("");
+    const deep = new URLSearchParams(location.search).get("v");
+    if (deep) openStory(deep);
   }
 
-  const order = ["youtube", "tiktok", "instagram", "facebook", "x", "threads", "pinterest", "tumblr", "linkedin", "medium", "devto"];
-  const chips = links => order.filter(k => links[k] && byId[k]).map(k => `
-      <a href="${esc(links[k])}" target="_blank" rel="noopener" title="Watch on ${esc(byId[k].name)}" aria-label="Watch on ${esc(byId[k].name)}"
-         class="press grid h-11 w-11 place-items-center rounded-xl border-[3px] border-ink bg-paper shadow-[3px_3px_0_#15130F]">${iconHtml(byId[k])}</a>`).join("");
-  const niceDate = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-
-  fetch("videos.json", { cache: "no-store" })
-    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(({ videos }) => {
-      if (!videos || !videos.length) throw new Error("empty");
-      const [first, ...rest] = videos;
-      const main = first.links.youtube || Object.values(first.links)[0];
-      document.getElementById("latestCard").innerHTML = `
-        <article class="overflow-hidden rounded-3xl border-[4px] border-ink bg-paper shadow-hard md:grid md:grid-cols-[minmax(0,320px)_minmax(0,1fr)] xl:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
-          <a href="${esc(main)}" target="_blank" rel="noopener" class="relative block md:border-r-[4px] md:border-ink">
-            <img src="${esc(first.thumbnail)}" alt="" class="aspect-[9/12] w-full object-cover object-top md:aspect-[9/14] md:h-full" />
-            <span class="absolute left-3 top-3 -rotate-3 rounded-md border-[3px] border-ink bg-red px-2 py-0.5 font-display text-sm uppercase text-paper">New</span>
-            <span class="absolute bottom-3 right-3 grid h-14 w-14 place-items-center rounded-full border-[4px] border-ink bg-yellow shadow-hardsm"><i class="ph-bold ph-play text-2xl" aria-hidden="true"></i></span>
-          </a>
-          <div class="p-4 md:flex md:flex-col md:justify-center md:p-8 xl:p-10">
-            <p class="text-xs font-semibold uppercase tracking-wider text-ink/60">${niceDate(first.date)}</p>
-            <h3 class="mt-1 text-[19px] font-bold leading-snug md:text-2xl xl:text-[28px]">${esc(first.title)}</h3>
-            <a href="${esc(main)}" target="_blank" rel="noopener" class="press mt-5 hidden w-fit items-center gap-2 rounded-xl border-[3px] border-ink bg-red px-5 py-3 font-display text-lg uppercase tracking-wide text-paper shadow-hardsm md:inline-flex"><i class="ph-bold ph-play" aria-hidden="true"></i> Watch on YouTube</a>
-            <p class="mb-2 mt-3 text-sm text-ink/70">Watch it on:</p>
-            <div class="flex flex-wrap gap-2.5">${chips(first.links)}</div>
-          </div>
-        </article>`;
-      document.getElementById("count").textContent = videos.length + " so far";
-      document.getElementById("all").innerHTML = videos.map(v => `
-        <article class="flex gap-3 rounded-2xl border-[3px] border-ink bg-paper p-3 shadow-hardsm">
-          <a href="${esc(v.links.youtube || Object.values(v.links)[0])}" target="_blank" rel="noopener" class="flex-none">
-            <img src="${esc(v.thumbnail)}" alt="" class="h-[120px] w-[78px] rounded-lg border-[3px] border-ink object-cover object-top" />
-          </a>
-          <div class="min-w-0">
-            <p class="text-[11px] font-semibold uppercase tracking-wider text-ink/60">${niceDate(v.date)}</p>
-            <h3 class="mt-0.5 text-[15px] font-bold leading-snug">${esc(v.title)}</h3>
-            <div class="mt-2 flex flex-wrap gap-1.5 [&_a]:h-8 [&_a]:w-8 [&_a]:rounded-lg [&_a]:border-2 [&_img]:h-4 [&_img]:w-4">${chips(v.links)}</div>
-          </div>
-        </article>`).join("");
-    })
-    .catch(() => {
-      document.getElementById("latest").innerHTML = `<p class="rounded-2xl border-[3px] border-ink bg-paper p-4 text-sm shadow-hardsm">The video list could not load. Find every story on <a class="font-bold underline" href="${PROFILE.accounts[0].url}">YouTube</a>.</p>`;
-    });
+  async function load() {
+    skeleton();
+    try {
+      const r = await fetch("videos.json", { cache: "no-cache" });
+      if (!r.ok) throw new Error(r.status);
+      videos = ((await r.json()).videos || []).slice().sort((a, b) => b.date.localeCompare(a.date));
+      render();
+    } catch {
+      $("newest").innerHTML = "";
+      $("all").innerHTML = `<div class="col-span-full rounded-2xl bg-white p-6 dark:bg-zinc-900">
+        <p class="font-semibold">The stories did not load.</p>
+        <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Check your connection and try again.</p>
+        <button id="retry" type="button" class="tap mt-4 rounded-full border border-zinc-300 px-4 py-2 text-sm font-semibold dark:border-zinc-700">Try again</button></div>`;
+      $("retry").onclick = load;
+    }
+  }
+  load();
 </script>
 </body>
 </html>
