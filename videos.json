@@ -1,6 +1,21 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "videos": [
+    {
+      "slug": "2026-10-25-colibri-a-free-giant-ai-that-runs-on-the-laptop-you-own",
+      "date": "2026-10-25",
+      "title": "Colibri: A Free Giant AI That Runs On The Laptop You Own",
+      "thumbnail": "thumbs/2026-10-25-colibri-a-free-giant-ai-that-runs-on-the-laptop-you-own.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/wf8I41R1dlM",
+        "instagram": "https://www.instagram.com/reel/De5GxfdpCng/",
+        "facebook": "https://www.facebook.com/reel/2860829847622309/",
+        "pinterest": "https://www.pinterest.com/pin/1102467183816913789/",
+        "threads": "https://www.threads.com/@cacheline2026/post/De5HT_HAiRj",
+        "tumblr": "https://www.tumblr.com/cacheline/831393171137347584",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7519873244049399809/"
+      }
+    },
     {
       "slug": "2026-10-24-sony-just-stopped-selling-its-last-4k-blu-ray-player-in",
       "date": "2026-10-24",
