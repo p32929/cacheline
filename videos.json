@@ -1,6 +1,20 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "videos": [
+    {
+      "slug": "2026-10-28-ruview-your-wifi-can-sense-breathing-with-no-camera",
+      "date": "2026-10-28",
+      "title": "RuView: Your WiFi Can Sense Breathing, With No Camera",
+      "thumbnail": "thumbs/2026-10-28-ruview-your-wifi-can-sense-breathing-with-no-camera.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/SSShgeKeEtU",
+        "instagram": "https://www.instagram.com/reel/DfAvmchJBFo/",
+        "facebook": "https://www.facebook.com/reel/1654447429653030/",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817191362/",
+        "threads": "https://www.threads.com/@cacheline2026/post/DfAwkFUgoP_",
+        "tumblr": "https://www.tumblr.com/cacheline/831662052975296512"
+      }
+    },
     {
       "slug": "2026-10-27-iqoo-s-new-phone-has-a-cooling-fan-and-a-9-000mah-battery",
       "date": "2026-10-27",
