@@ -1,6 +1,61 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "videos": [
+    {
+      "slug": "2026-11-01-handy-the-free-app-with-35-000-stars-that-types-what-you-say",
+      "date": "2026-11-01",
+      "title": "Handy: The Free App With 35,000 Stars That Types What You Say",
+      "thumbnail": "thumbs/2026-11-01-handy-the-free-app-with-35-000-stars-that-types-what-you-say.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/zBfatiFQOxI",
+        "instagram": "https://www.instagram.com/reel/DfLGCGZJlwR/",
+        "facebook": "https://www.facebook.com/reel/4594818504170354/",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817545177/",
+        "threads": "https://www.threads.com/@cacheline2026/post/DfLHiUjgkFg",
+        "tumblr": "https://www.tumblr.com/cacheline/832026479688925184/handy-a-free-app-that-types-what-you-say"
+      }
+    },
+    {
+      "slug": "2026-11-01-windows-malware-reads-uber-eats-orders-then-can-ask-ai-to",
+      "date": "2026-11-01",
+      "title": "Windows Malware Reads Uber Eats Orders, Then Can Ask AI to Rank Your Valuables",
+      "thumbnail": "thumbs/2026-11-01-windows-malware-reads-uber-eats-orders-then-can-ask-ai-to.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/DrzvcZ1t0Z8",
+        "pinterest": "https://www.pinterest.com/pin/3994536827177211456/",
+        "tumblr": "https://www.tumblr.com/cacheline/832024071290191872"
+      }
+    },
+    {
+      "slug": "2026-10-31-chatgpt-share-link-could-take-over-your-account-openai",
+      "date": "2026-10-31",
+      "title": "ChatGPT Share Link Could Take Over Your Account. OpenAI Fixed It.",
+      "thumbnail": "thumbs/2026-10-31-chatgpt-share-link-could-take-over-your-account-openai.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/p_q9ovOsb2A",
+        "pinterest": "https://www.pinterest.com/pin/3994530799794604288/"
+      }
+    },
+    {
+      "slug": "2026-10-31-iphone-duo-apple-admits-1-999-foldable-has-an-inner-screen",
+      "date": "2026-10-31",
+      "title": "iPhone Duo: Apple Admits $1,999 Foldable Has an Inner-Screen Problem",
+      "thumbnail": "thumbs/2026-10-31-iphone-duo-apple-admits-1-999-foldable-has-an-inner-screen.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/9CaXvB8yfUA",
+        "pinterest": "https://www.pinterest.com/pin/3994542219809087680/"
+      }
+    },
+    {
+      "slug": "2026-10-31-starlink-ukraine-musk-slowed-it-for-over-a-week-then-blamed",
+      "date": "2026-10-31",
+      "title": "Starlink Ukraine: Musk Slowed It for Over a Week, Then Blamed the Army",
+      "thumbnail": "thumbs/2026-10-31-starlink-ukraine-musk-slowed-it-for-over-a-week-then-blamed.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/OYgi19dLOHU",
+        "pinterest": "https://www.pinterest.com/pin/3994548129516521792/"
+      }
+    },
     {
       "slug": "2026-10-31-project-nomad-free-offline-wikipedia-maps-and-ai-41k-github",
       "date": "2026-10-31",
