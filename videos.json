@@ -1,6 +1,62 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-05",
   "videos": [
+    {
+      "slug": "2026-11-05-nz-satellite-photo-1-400-satellites-and-everyone-says-it-s",
+      "date": "2026-11-05",
+      "title": "NZ Satellite Photo: 1,400 Satellites, and Everyone Says It's AI",
+      "thumbnail": "thumbs/2026-11-05-nz-satellite-photo-1-400-satellites-and-everyone-says-it-s.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/H_R0f31iplA",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817875799/",
+        "instagram": "https://www.instagram.com/reel/DfVfm6vppsD/"
+      }
+    },
+    {
+      "slug": "2026-11-05-disc-image-studio-burn-a-picture-onto-a-blank-dvd-no-ink",
+      "date": "2026-11-05",
+      "title": "Disc Image Studio: Burn a Picture Onto a Blank DVD, No Ink",
+      "thumbnail": "thumbs/2026-11-05-disc-image-studio-burn-a-picture-onto-a-blank-dvd-no-ink.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/cZTK5mY12jA",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817876530/",
+        "instagram": "https://www.instagram.com/reel/DfVhSbWpRXC/"
+      }
+    },
+    {
+      "slug": "2026-11-05-zelda-ocarina-of-time-remake-is-out-today-and-now-it-talks",
+      "date": "2026-11-05",
+      "title": "Zelda Ocarina of Time Remake Is Out Today, and Now It Talks",
+      "thumbnail": "thumbs/2026-11-05-zelda-ocarina-of-time-remake-is-out-today-and-now-it-talks.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/-OfpJx92vvw",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817878645/",
+        "instagram": "https://www.instagram.com/reel/DfVlibzpdqx/"
+      }
+    },
+    {
+      "slug": "2026-11-05-gemini-chats-can-train-google-s-ai-turn-off-this-setting",
+      "date": "2026-11-05",
+      "title": "Gemini Chats Can Train Google's AI. Turn Off This Setting",
+      "thumbnail": "thumbs/2026-11-05-gemini-chats-can-train-google-s-ai-turn-off-this-setting.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Isvgnuu8XQA",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817877829/",
+        "instagram": "https://www.instagram.com/reel/DfVj6P8pcgt/"
+      }
+    },
+    {
+      "slug": "2026-11-05-nvidia-rtx-spark-laptop-5x-slower-when-plugged-in-on-linux",
+      "date": "2026-11-05",
+      "title": "Nvidia RTX Spark Laptop: 5x Slower When Plugged In, On Linux",
+      "thumbnail": "thumbs/2026-11-05-nvidia-rtx-spark-laptop-5x-slower-when-plugged-in-on-linux.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/i1BjtQiB7Yc",
+        "pinterest": "https://www.pinterest.com/pin/1102467183817877260/",
+        "instagram": "https://www.instagram.com/reel/DfVimoEpCuZ/",
+        "facebook": "https://www.facebook.com/reel/2119500878661923"
+      }
+    },
     {
       "slug": "2026-11-03-jiangshan-map-watch-2-400-years-of-china-change-in-seconds",
       "date": "2026-11-03",
