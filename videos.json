@@ -1,6 +1,66 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-07",
   "videos": [
+    {
+      "slug": "2026-11-07-sherlock-one-command-checks-400-sites-for-your-username",
+      "date": "2026-11-07",
+      "title": "Sherlock: One Command Checks 400+ Sites For Your Username",
+      "thumbnail": "thumbs/2026-11-07-sherlock-one-command-checks-400-sites-for-your-username.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/iIW94rrI1Zg",
+        "instagram": "https://www.instagram.com/reel/DfatDcdJJil/",
+        "facebook": "https://www.facebook.com/reel/4082239168580156",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818032635/"
+      }
+    },
+    {
+      "slug": "2026-11-07-meta-muse-you-can-now-video-call-an-ai-that-can-t-see-you",
+      "date": "2026-11-07",
+      "title": "Meta Muse: You Can Now Video-Call an AI That Can't See You",
+      "thumbnail": "thumbs/2026-11-07-meta-muse-you-can-now-video-call-an-ai-that-can-t-see-you.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/70EoVvaHwhM",
+        "instagram": "https://www.instagram.com/reel/DfarJAxpPCw/",
+        "facebook": "https://www.facebook.com/reel/1129210316638809",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818031620/"
+      }
+    },
+    {
+      "slug": "2026-11-07-gta-6-made-751-million-before-anyone-has-played-it",
+      "date": "2026-11-07",
+      "title": "GTA 6 Made $751 Million Before Anyone Has Played It",
+      "thumbnail": "thumbs/2026-11-07-gta-6-made-751-million-before-anyone-has-played-it.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Hq4v_KZOqrE",
+        "instagram": "https://www.instagram.com/reel/DfapaQrpZtU/",
+        "facebook": "https://www.facebook.com/reel/1790089152226799",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818030711/"
+      }
+    },
+    {
+      "slug": "2026-11-07-faa-air-traffic-control-still-uses-floppy-disks-fix-due-2028",
+      "date": "2026-11-07",
+      "title": "FAA Air Traffic Control Still Uses Floppy Disks. Fix Due 2028",
+      "thumbnail": "thumbs/2026-11-07-faa-air-traffic-control-still-uses-floppy-disks-fix-due-2028.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/4Ua9QobO7rs",
+        "instagram": "https://www.instagram.com/reel/DfanWLtpJ5I/",
+        "facebook": "https://www.facebook.com/reel/1969414747762619",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818029805/"
+      }
+    },
+    {
+      "slug": "2026-11-07-tesla-cybertruck-musk-predicted-250-000-sales-it-sold-20-237",
+      "date": "2026-11-07",
+      "title": "Tesla Cybertruck: Musk Predicted 250,000 Sales. It Sold 20,237",
+      "thumbnail": "thumbs/2026-11-07-tesla-cybertruck-musk-predicted-250-000-sales-it-sold-20-237.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/_6XGZ3CNtew",
+        "instagram": "https://www.instagram.com/reel/DfaltoSJWUC/",
+        "facebook": "https://www.facebook.com/reel/1182371534120557",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818029066/"
+      }
+    },
     {
       "slug": "2026-11-05-this-176-kb-program-runs-a-2-78-trillion-ai-on-8-gb-of-ram",
       "date": "2026-11-05",
