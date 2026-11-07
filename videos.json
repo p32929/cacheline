@@ -1,6 +1,66 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "videos": [
+    {
+      "slug": "2026-11-08-openmausbot-your-own-team-of-ai-bots-in-one-chat-app",
+      "date": "2026-11-08",
+      "title": "OpenMausBot: Your Own Team of AI Bots in One Chat App",
+      "thumbnail": "thumbs/2026-11-08-openmausbot-your-own-team-of-ai-bots-in-one-chat-app.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/7A5YEv2sHnw",
+        "instagram": "https://www.instagram.com/reel/DfdVSbYpRK_/",
+        "facebook": "https://www.facebook.com/reel/2110830029568502",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818125919/"
+      }
+    },
+    {
+      "slug": "2026-11-08-gta-vi-cars-built-for-real-can-you-tell-which-is-the-game",
+      "date": "2026-11-08",
+      "title": "GTA VI Cars Built for Real: Can You Tell Which Is the Game?",
+      "thumbnail": "thumbs/2026-11-08-gta-vi-cars-built-for-real-can-you-tell-which-is-the-game.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/chaoLl5TsD4",
+        "instagram": "https://www.instagram.com/reel/DfdTm_gp3Ou/",
+        "facebook": "https://www.facebook.com/reel/1596992745441449",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818125143/"
+      }
+    },
+    {
+      "slug": "2026-11-08-100-000-apps-fit-the-iphone-duo-venmo-still-has-a-black-bar",
+      "date": "2026-11-08",
+      "title": "100,000 Apps Fit the iPhone Duo. Venmo Still Has a Black Bar",
+      "thumbnail": "thumbs/2026-11-08-100-000-apps-fit-the-iphone-duo-venmo-still-has-a-black-bar.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/cnYMT26L2cs",
+        "instagram": "https://www.instagram.com/reel/DfdQyc9Jhiu/",
+        "facebook": "https://www.facebook.com/reel/2560451354450177",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818123617/"
+      }
+    },
+    {
+      "slug": "2026-11-08-need-for-speed-underground-2-now-runs-in-your-browser-tab",
+      "date": "2026-11-08",
+      "title": "Need for Speed Underground 2 Now Runs in Your Browser Tab",
+      "thumbnail": "thumbs/2026-11-08-need-for-speed-underground-2-now-runs-in-your-browser-tab.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/I0vNneJ2sNI",
+        "instagram": "https://www.instagram.com/reel/DfdPCNtJzO5/",
+        "facebook": "https://www.facebook.com/reel/1703328958172651",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818122658/"
+      }
+    },
+    {
+      "slug": "2026-11-08-your-iphone-won-t-finish-100-000-phrases-and-apple-hid-the",
+      "date": "2026-11-08",
+      "title": "Your iPhone Won't Finish 100,000+ Phrases, And Apple Hid the List",
+      "thumbnail": "thumbs/2026-11-08-your-iphone-won-t-finish-100-000-phrases-and-apple-hid-the.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/WCVJffV16H8",
+        "instagram": "https://www.instagram.com/reel/DfdNjb8JAL6/",
+        "facebook": "https://www.facebook.com/reel/4485398808366960",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818121485/"
+      }
+    },
     {
       "slug": "2026-11-07-sherlock-one-command-checks-400-sites-for-your-username",
       "date": "2026-11-07",
