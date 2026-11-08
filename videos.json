@@ -1,6 +1,63 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "videos": [
+    {
+      "slug": "2026-11-09-concat-a-free-video-editor-with-auto-captions-and-no",
+      "date": "2026-11-09",
+      "title": "Concat: A Free Video Editor With Auto-Captions and No Watermark",
+      "thumbnail": "thumbs/2026-11-09-concat-a-free-video-editor-with-auto-captions-and-no.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/q4so8rup_4s",
+        "instagram": "https://www.instagram.com/reel/Dff8nFHpkMC/",
+        "facebook": "https://www.facebook.com/reel/1458499356348057",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818217801/"
+      }
+    },
+    {
+      "slug": "2026-11-09-apple-s-glowing-logo-is-back-but-settings-can-t-turn-it-off",
+      "date": "2026-11-09",
+      "title": "Apple's Glowing Logo Is Back, But Settings Can't Turn It Off",
+      "thumbnail": "thumbs/2026-11-09-apple-s-glowing-logo-is-back-but-settings-can-t-turn-it-off.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/unS8ctbspc4",
+        "instagram": "https://www.instagram.com/reel/Dff6ilZpMR8/",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818216592/"
+      }
+    },
+    {
+      "slug": "2026-11-09-sam-altman-renamed-himself-ram-altman-after-this-backlash",
+      "date": "2026-11-09",
+      "title": "Sam Altman Renamed Himself 'RAM Altman' After This Backlash",
+      "thumbnail": "thumbs/2026-11-09-sam-altman-renamed-himself-ram-altman-after-this-backlash.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/N2LtYz2VYZs",
+        "instagram": "https://www.instagram.com/reel/Dff41xwpPfV/",
+        "facebook": "https://www.facebook.com/reel/1923222922375229",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818215540/"
+      }
+    },
+    {
+      "slug": "2026-11-09-oled-tv-edge-rot-14-of-16-sets-grew-dead-pixels-in-a-test",
+      "date": "2026-11-09",
+      "title": "OLED TV Edge Rot: 14 of 16 Sets Grew Dead Pixels in a Test",
+      "thumbnail": "thumbs/2026-11-09-oled-tv-edge-rot-14-of-16-sets-grew-dead-pixels-in-a-test.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/P-7ix0j3cew",
+        "instagram": "https://www.instagram.com/reel/Dff176DJ1tl/",
+        "facebook": "https://www.facebook.com/reel/1002989379514786",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818212974/"
+      }
+    },
+    {
+      "slug": "2026-11-09-windows-sticky-keys-popup-exists-because-of-a-pinball-game",
+      "date": "2026-11-09",
+      "title": "Windows Sticky Keys Popup Exists Because of a Pinball Game",
+      "thumbnail": "thumbs/2026-11-09-windows-sticky-keys-popup-exists-because-of-a-pinball-game.jpg",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/lm9Np2kAJm8",
+        "pinterest": "https://www.pinterest.com/pin/1102467183818211708/"
+      }
+    },
     {
       "slug": "2026-11-08-openmausbot-your-own-team-of-ai-bots-in-one-chat-app",
       "date": "2026-11-08",
